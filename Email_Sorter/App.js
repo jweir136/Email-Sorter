@@ -13,7 +13,7 @@ const App = () => {
         <Stack.Screen
             name="Email Selection"
             component={ EmailSelectionScreen }
-            options={{ title: 'Welcome' }}
+            options={{ title: "" }}
           />
       </Stack.Navigator>
     </NavigationContainer>
