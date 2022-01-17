@@ -1,29 +1,53 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, Image, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
 import Link from './Link';
 
 export default EmailSelectionScreen = ({ navigation }) => {
     return (
         <View style={ styles.mainContainer }>
 
-            <View style={ styles.container }>
-                <Text style={ styles.containerText }>GMail</Text>
-            </View>
-            <View style={ styles.container }>
+            <TouchableHighlight
+                style={ styles.container }
+                onPress={ () => navigation.navigate("Email Info Input", {"host":"imap.gmail.com", "name":"Gmail"}) } 
+                activeOpacity={0.6}   
+                underlayColor="#DDDDDD">
+                    <Text style={ styles.containerText }>GMail</Text>
+            </TouchableHighlight>
+            <TouchableHighlight
+                style={ styles.container }
+                onPress={ () => navigation.navigate("Email Info Input", {"host":"outlook.office365.com", "name":"Outlook"}) }  
+                activeOpacity={0.6}   
+                underlayColor="#DDDDDD">                
                 <Text style={ styles.containerText }>Outlook</Text>
-            </View>
-            <View style={ styles.container }>
+            </TouchableHighlight>
+            <TouchableHighlight
+                style={ styles.container }
+                onPress={ () => navigation.navigate("Email Info Input", {"host":"imap.mail.yahoo.com", "name":"Yahoo Mail"}) } 
+                activeOpacity={0.6}   
+                underlayColor="#DDDDDD">                
                 <Text style={ styles.containerText }>Yahoo Mail</Text>
-            </View>
-            <View style={ styles.container }>
+            </TouchableHighlight>
+            <TouchableHighlight
+                style={ styles.container }
+                onPress={ () => navigation.navigate("Email Info Input", {"host":"outlook.office365.com", "name":"Hotmail"}) }  
+                activeOpacity={0.6}   
+                underlayColor="#DDDDDD">                
                 <Text style={ styles.containerText }>Hotmail</Text>
-            </View>
-            <View style={ styles.container }>
+            </TouchableHighlight>
+            <TouchableHighlight
+                style={ styles.container }
+                onPress={ () => navigation.navigate("Email Info Input", {"host":"smtp.aol.com", "name":"Aol"}) } 
+                activeOpacity={0.6}   
+                underlayColor="#DDDDDD">                
                 <Text style={ styles.containerText }>Aol</Text>
-            </View>
-            <View style={ styles.container }>
+            </TouchableHighlight>
+            <TouchableHighlight
+                style={ styles.container }
+                onPress={ () => navigation.navigate("Email Info Input", {"host":null, "name":null}) } 
+                activeOpacity={0.6}   
+                underlayColor="#DDDDDD">                
                 <Text style={ styles.containerText }>Other</Text>
-            </View>
+            </TouchableHighlight>
 
             <Text style={ styles.smallText }>or <Link text="create a new account"/></Text>
             
@@ -34,7 +58,8 @@ export default EmailSelectionScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
-        justifyContent: 'center'
+        justifyContent: 'center',
+        backgroundColor: 'white'
     },
     container: {
         flex: 0.10,
