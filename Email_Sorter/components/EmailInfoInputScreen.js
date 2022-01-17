@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { KeyboardAvoidingView, View, Text, StyleSheet } from 'react-native';
-import { TextInput, Button } from 'react-native-paper';
 
 export default EmailSelectionScreen = ({ route, navigation }) => {
     const imap = route.params['host'];

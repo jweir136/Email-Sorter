@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, TouchableHighlight, Image } from 'react-native';
 import Link from './Link';
 
 export default EmailSelectionScreen = ({ navigation }) => {
@@ -11,7 +11,7 @@ export default EmailSelectionScreen = ({ navigation }) => {
                 onPress={ () => navigation.navigate("Email Info Input", {"host":"imap.gmail.com", "name":"Gmail"}) } 
                 activeOpacity={0.6}   
                 underlayColor="#DDDDDD">
-                    <Text style={ styles.containerText }>GMail</Text>
+                    <Image source={ require("Email_Sorter/assets/newgmaillogo.jpg") } style={ styles.image }/>
             </TouchableHighlight>
             <TouchableHighlight
                 style={ styles.container }
@@ -75,4 +75,9 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 16
     },
+    image: {
+        flex: 1,
+        height: undefined,
+        width: undefined
+    }
 });
