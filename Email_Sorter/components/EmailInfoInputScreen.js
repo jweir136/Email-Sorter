@@ -1,9 +1,12 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { KeyboardAvoidingView, View, Text, TextInput, StyleSheet, Button, TouchableOpacity } from 'react-native';
 
 export default EmailSelectionScreen = ({ route, navigation }) => {
     const imap = route.params['host'];
     const name = route.params['name'];
+
+    const [emailInput, setEmailInput] = useState("");
+    const [passwordInput, setPasswordInput] = useState("");
 
     return (
         <KeyboardAvoidingView style={ styles.mainView }>
@@ -18,6 +21,7 @@ export default EmailSelectionScreen = ({ route, navigation }) => {
                     placeholder="Email"
                     style={ styles.textInput }
                     placeholderTextColor={ "grey" }
+                    onChangeText={ (input) => setEmailInput(input) }
                 />
 
                 <Text></Text>
@@ -26,7 +30,8 @@ export default EmailSelectionScreen = ({ route, navigation }) => {
                     placeholder="Password"
                     style={ styles.textInput }
                     placeholderTextColor={ "grey" }
-                    secureTextEntry={true}                
+                    secureTextEntry={true}
+                    onChangeText={ (input) => setPasswordInput(input) }                
                 />
 
                 <Text></Text>
@@ -35,7 +40,7 @@ export default EmailSelectionScreen = ({ route, navigation }) => {
 
                 <Text></Text>
             
-                <TouchableOpacity style={ styles.buttonTouch }>
+                <TouchableOpacity style={ styles.buttonTouch } onPress={ () => console.log(emailInput, passwordInput) }>
                 <View style={ styles.button }>
                     <Text style={ styles.buttonText }>Login</Text>
                 </View>
