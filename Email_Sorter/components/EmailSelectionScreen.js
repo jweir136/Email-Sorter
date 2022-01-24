@@ -18,28 +18,14 @@ export default EmailSelectionScreen = ({ navigation }) => {
                 onPress={ () => navigation.navigate("Email Info Input", {"host":"outlook.office365.com", "name":"Outlook"}) }  
                 activeOpacity={0.6}   
                 underlayColor="#DDDDDD">                
-                <Text style={ styles.containerText }>Outlook</Text>
+                    <Image source={ require("Email_Sorter/assets/outlook.png") } style={ styles.image }/>
             </TouchableHighlight>
             <TouchableHighlight
                 style={ styles.container }
                 onPress={ () => navigation.navigate("Email Info Input", {"host":"imap.mail.yahoo.com", "name":"Yahoo Mail"}) } 
                 activeOpacity={0.6}   
                 underlayColor="#DDDDDD">                
-                <Text style={ styles.containerText }>Yahoo Mail</Text>
-            </TouchableHighlight>
-            <TouchableHighlight
-                style={ styles.container }
-                onPress={ () => navigation.navigate("Email Info Input", {"host":"outlook.office365.com", "name":"Hotmail"}) }  
-                activeOpacity={0.6}   
-                underlayColor="#DDDDDD">                
-                <Text style={ styles.containerText }>Hotmail</Text>
-            </TouchableHighlight>
-            <TouchableHighlight
-                style={ styles.container }
-                onPress={ () => navigation.navigate("Email Info Input", {"host":"smtp.aol.com", "name":"Aol"}) } 
-                activeOpacity={0.6}   
-                underlayColor="#DDDDDD">                
-                <Text style={ styles.containerText }>Aol</Text>
+                    <Image source={ require("Email_Sorter/assets/yahoo.png") } style={ styles.image }/>
             </TouchableHighlight>
             <TouchableHighlight
                 style={ styles.container }
@@ -78,6 +64,6 @@ const styles = StyleSheet.create({
     image: {
         flex: 1,
         height: undefined,
-        width: undefined
+        width: undefined,
     }
 });
