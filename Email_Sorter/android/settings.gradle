@@ -1,3 +1,9 @@
 rootProject.name = 'Email_Sorter'
+include ':react-native-mailcore'
+project(':react-native-mailcore').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-mailcore/android')
+include ':react-native-mailcore'
+project(':react-native-mailcore').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-mailcore/android')
+include ':react-native-mailcore'
+project(':react-native-mailcore').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-mailcore/android')
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'

@@ -8,6 +8,10 @@ export default EmailSelectionScreen = ({ route, navigation }) => {
     const [emailInput, setEmailInput] = useState("");
     const [passwordInput, setPasswordInput] = useState("");
 
+    loginIsValid = () => {
+        console.log("TODO");
+    }
+
     return (
         <KeyboardAvoidingView style={ styles.mainView }>
             <View style={ styles.inputView }>
@@ -40,7 +44,7 @@ export default EmailSelectionScreen = ({ route, navigation }) => {
 
                 <Text></Text>
             
-                <TouchableOpacity style={ styles.buttonTouch } onPress={ () => console.log(emailInput, passwordInput) }>
+                <TouchableOpacity style={ styles.buttonTouch } onPress={ loginIsValid }>
                 <View style={ styles.button }>
                     <Text style={ styles.buttonText }>Login</Text>
                 </View>

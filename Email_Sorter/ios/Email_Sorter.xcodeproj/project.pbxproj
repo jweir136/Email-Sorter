@@ -13,6 +13,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		478002C36A5B3221EC2D16D3 /* libPods-Email_Sorter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0255BD327C8A6D5A4AB81C9 /* libPods-Email_Sorter.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		922C99DD7F3D40EAB6B1BEAE /* libRNMailCore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F45FBD37F624146AD78B54E /* libRNMailCore.a */; };
 		AE9EB2A5E0C0FDF0B8E23713 /* libPods-Email_Sorter-Email_SorterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6D6D984A71536D75F0B158 /* libPods-Email_Sorter-Email_SorterTests.a */; };
 /* End PBXBuildFile section */
 
@@ -37,9 +38,11 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Email_Sorter/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Email_Sorter/main.m; sourceTree = "<group>"; };
 		1A6D6D984A71536D75F0B158 /* libPods-Email_Sorter-Email_SorterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Email_Sorter-Email_SorterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F45FBD37F624146AD78B54E /* libRNMailCore.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = archive.ar; name = libRNMailCore.a; path = libRNMailCore.a; sourceTree = "<group>"; };
 		672A345A110913E447B84559 /* Pods-Email_Sorter-Email_SorterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Email_Sorter-Email_SorterTests.debug.xcconfig"; path = "Target Support Files/Pods-Email_Sorter-Email_SorterTests/Pods-Email_Sorter-Email_SorterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6925E79D5451BE6BD2F7B39B /* Pods-Email_Sorter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Email_Sorter.debug.xcconfig"; path = "Target Support Files/Pods-Email_Sorter/Pods-Email_Sorter.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Email_Sorter/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		85AD6422EFB544E1A7540D72 /* RNMailCore.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNMailCore.xcodeproj; path = "../node_modules/react-native-mailcore/ios/RNMailCore.xcodeproj"; sourceTree = "<group>"; };
 		9215B7F311946476DD033A8E /* Pods-Email_Sorter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Email_Sorter.release.xcconfig"; path = "Target Support Files/Pods-Email_Sorter/Pods-Email_Sorter.release.xcconfig"; sourceTree = "<group>"; };
 		B0255BD327C8A6D5A4AB81C9 /* libPods-Email_Sorter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Email_Sorter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E676180D6C50B5EB8060D30A /* Pods-Email_Sorter-Email_SorterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Email_Sorter-Email_SorterTests.release.xcconfig"; path = "Target Support Files/Pods-Email_Sorter-Email_SorterTests/Pods-Email_Sorter-Email_SorterTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				478002C36A5B3221EC2D16D3 /* libPods-Email_Sorter.a in Frameworks */,
+				922C99DD7F3D40EAB6B1BEAE /* libRNMailCore.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +113,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				85AD6422EFB544E1A7540D72 /* RNMailCore.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -436,12 +441,20 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-mailcore/ios",
+				);
 				INFOPLIST_FILE = Email_SorterTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -460,12 +473,20 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-mailcore/ios",
+				);
 				INFOPLIST_FILE = Email_SorterTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -486,6 +507,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-mailcore/ios",
+				);
 				INFOPLIST_FILE = Email_Sorter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -511,6 +536,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-mailcore/ios",
+				);
 				INFOPLIST_FILE = Email_Sorter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
